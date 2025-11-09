@@ -1,228 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/71c9f68bdf.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/logo.png" class="logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-circle-xmark " onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <p>Fullstack Developer</p>
-                <h1>Hi, I am <span>Aaron</span> <br> from South Africa</h1>
-            </div>
-        </div>
-    </div>
-    <!-------------------------------About-------------------------------------------------------------------------------->
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/aaronIndex.jpeg" width="100" height="400">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About me</h1>
-                    <p>Hi, I'm Aaron Kyakwima, a recent graduate and dynamic junior fullstack developer with a successful internship at SupremeWorxit. Thriving as a backend developer, I excel in cutting-edge technologies, particularly focusing on Node.js and leveraging databases like PostgreSQL.
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Aaron Kyakwima — Portfolio</title>
 
-                        Beyond backend expertise, I've delved into frontend technologies, mastering HTML, CSS, and JavaScript for seamless and visually appealing user interfaces. My skills extend to responsive design, ensuring functionality across various devices.
-                        
-                        I possess a deep appreciation for version control (Git), enabling efficient collaboration, and proficiency in integrating RESTful APIs for seamless communication within fullstack applications.
-                        
-                        Committed to continuous learning, I stay current with industry trends and emerging technologies, emphasizing adaptability in the ever-evolving field of fullstack development. With a passion for problem-solving, a hands-on approach, and a diverse skill set, I bring a fresh perspective to any team or project in the next phase of my career.</p>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-                        <div class="tab-titles" >
-                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                            <p class="tab-links" onclick="opentab('education')">Education</p>
-                        </div>
-                        <div class="tab-contents active-tab" id="skills">
-                            <ul>
-                                <li>
-                                    <span>UI/UX</span><br>Designing Web/App interfaces
-                                </li>
-                                <li>
-                                    <span>Backend Development</span><br>Building and maintaining the server-side of web applications
-                                </li>
-                                <li>
-                                    <span>App Development</span><br>Designing Web/App interfaces and functionality.
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="experience">
-                            <ul>
-                                <li>
-                                    <span>2024-curent</span><br>Fullstack developer at GROWIT MC.
-                                </li>
-                                <li>
-                                    <span>2023-April 2024</span><br>Web development intern at GAOTEk Inc.
-                                </li>
-                               
-                                
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="education">
-                            <ul>
-                                <li>
-                                    <span>2025-current</span><br>Bachelor in science honors in cyber security and network engineering.
-                                </li>
-                                <li>
-                                    <span>2021-2024</span><br>Bachelor in Computer Science At EDUVOS University in Johannesburg.
-                                </li>
-                                
-                            </ul>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--------------------------------------------------Services--------------------------------------------------------->
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>UI/UX</h2>
-                    <p>As a web designer, I specialize in creating visually appealing and user-friendly digital experiences. My responsibilities include crafting layouts, selecting color schemes, and ensuring responsive designs across devices. I collaborate closely with development teams, communicate design concepts effectively, and stay updated on industry trends to contribute to the success of web projects. My commitment to accessibility and understanding of web technologies enhances the overall user experience.</p>
-                   
-                </div>
-                <div>
-                    <i class="fa-solid fa-gear"></i>
-                    <h2>Backend Development</h2>
-                    <p>As a backend developer, my focus is on building and maintaining the server-side of web applications, implementing robust server logic, and managing databases for seamless data interactions. I specialize in languages like Node.js, Python, or Java, and work to ensure the functionality and efficiency of web applications. Collaborating with frontend developers, I create APIs and handle data integration, contributing to a cohesive and responsive user experience. My responsibilities also include version control, security implementation, and continuous learning to adapt to evolving technologies.</p>
-                    
-                </div>
-                <div>
-                    <i class="fa-brands fa-app-store"></i>
-                    <h2>App Development</h2>
-                    <p>In app development, my primary responsibility is creating functional and engaging mobile applications. Leveraging languages like Swift, Kotlin, or React Native, I work on both the frontend and backend aspects to ensure a seamless user experience. My tasks involve designing intuitive interfaces, implementing features, and optimizing performance for iOS or Android platforms. Constantly staying updated on emerging technologies and user trends, I aim to deliver innovative and user-friendly applications.</p>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Simple meta / social -->
+    <meta
+      name="description"
+      content="Aaron Kyakwima — Frontend / Fullstack developer. Built with TailwindCSS."
+    />
+    <link rel="icon" href="data:,A" />
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <!-- NAV -->
+    <header class="fixed w-full z-30 bg-white/70 backdrop-blur-md shadow-sm">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between h-16">
+          <a href="#" class="font-semibold text-lg"
+            >Aaron<span class="text-indigo-600">K.</span></a
+          >
+          <nav class="hidden md:flex gap-6 items-center text-sm">
+            <a href="#about" class="hover:text-indigo-600">About</a>
+            <a href="#work" class="hover:text-indigo-600">Work</a>
+            <a href="#services" class="hover:text-indigo-600">Services</a>
+            <a href="#contact" class="hover:text-indigo-600">Contact</a>
+            <a
+              href="https://github.com/Aaronkindi"
+              target="_blank"
+              class="px-3 py-1 rounded-md border border-slate-200 text-sm"
+              >GitHub</a
+            >
+          </nav>
 
-    <!---------------------------------------------------------Portfolio----------------------------------------------------------------------------->
-    <div id="portfolio">
-        <div class="container">
-            <h1 class="sub-title">My Work</h1>
-            <div class="work-list">
-                <div class="work">
-                    <img src="images/security.jpg" alt="" width="400px"  height="400px">
-                    <div class="layer">
-                        <h3>IAMWORX</h3>
-                        <p> A Web app that uses cutting-edge algorithm,
-                         to recommend the perfect Information Access Management system for your organization</p>
-                         <a href="https://supremeworxit.vercel.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/app2.jpg" alt="" width="400px"  height="400px">
-                    <div class="layer">
-                        <h3>Track it</h3>
-                        <p> A Web app that tracks users spending in order to help their spending habits <th></th></p>
-                         <a href="https://github.com/Aaronkindi/expense-improved"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/app3.jpg" alt="" width="400px"  height="400px">
-                    <div class="layer">
-                        <h3>Crypto Tracker</h3>
-                        <p> A Web app that tracks the real-time prices of major crypto indexes</p>
-                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-            </div>
-            <a href="#" class="btn">See more</a>
+          <!-- Mobile toggle -->
+          <button
+            id="nav-toggle"
+            class="md:hidden p-2 rounded-md focus:outline-none"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                id="nav-icon"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
         </div>
-    </div>
+      </div>
 
-<!----------------------------------------------Contact------------------------------------------------------>
-
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p> <i class="fa-solid fa-paper-plane"></i>Kyakwima96@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i>0721766011</p>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/aaron-kindi-b6a220237/"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-                <a href="images/kyakwimaCV.pdf" download class="btn btn2">Download My CV</a>
-            </div>
-            
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Email"required>
-                    <textarea name="Message"  rows="10" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-            </div>
-            <span id="msg"></span>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden border-t">
+        <div class="px-6 py-4 flex flex-col gap-2">
+          <a href="#about" class="py-2">About</a>
+          <a href="#work" class="py-2">Work</a>
+          <a href="#services" class="py-2">Services</a>
+          <a href="#contact" class="py-2">Contact</a>
+          <a href="https://github.com/Aaronkindi" target="_blank" class="py-2"
+            >GitHub</a
+          >
         </div>
+      </div>
+    </header>
+
+    <main class="pt-24">
+      <!-- HERO -->
+      <section class="max-w-6xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <p class="text-indigo-600 font-medium">Fullstack Developer</p>
+            <h1 class="mt-3 text-4xl md:text-5xl font-extrabold leading-tight">
+              Hi, I’m <span class="text-indigo-600">Aaron Kyakwima</span><br />
+              I build responsive web apps.
+            </h1>
+            <p class="mt-6 text-slate-700 max-w-xl">
+              Front-End Developer with 2+ years of experience building
+              responsive web apps. Skilled in React, JavaScript and modern UI/UX
+              principles. Passionate about delivering high-quality code and
+              learning new technologies.
+            </p>
+
+            <div class="mt-6 flex gap-3">
+              <a
+                href="#work"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-indigo-600 text-white shadow-sm hover:opacity-95"
+              >
+                View my work
+              </a>
+              <a
+                href="files/Aaron_Kyakwima_CV.pdf"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-slate-200"
+              >
+                Download CV
+              </a>
+              <a
+                href="https://github.com/Aaronkindi"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-slate-200"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="flex justify-center">
+            <div
+              class="w-72 h-72 bg-gradient-to-tr from-indigo-300 to-indigo-500 rounded-2xl flex items-center justify-center text-white shadow-xl"
+            >
+              <div class="text-center">
+                <div class="text-2xl font-bold">Aaron</div>
+                <div class="mt-1 text-sm">Fullstack Developer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="border-t">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="md:col-span-2">
+              <h2 class="text-2xl font-bold">About me</h2>
+              <p class="mt-4 text-slate-700">
+                Hi, I'm <strong>Aaron Kyakwima</strong>, a recent graduate and
+                dynamic junior fullstack developer. I have experience as a
+                Frontend Developer and backend using Node.js; I enjoy building
+                performant web apps, and working with RESTful APIs.
+              </p>
+
+              <div class="mt-6 grid sm:grid-cols-2 gap-4">
+                <div class="p-4 bg-white rounded-lg shadow-sm border">
+                  <h3 class="font-semibold">Experience</h3>
+                  <ul class="mt-2 text-sm text-slate-600">
+                    <li>Frontend Developer — GrowIT MC (Apr 2024 – Present)</li>
+                  </ul>
+                </div>
+
+                <div class="p-4 bg-white rounded-lg shadow-sm border">
+                  <h3 class="font-semibold">Education & Skills</h3>
+                  <p class="mt-2 text-sm text-slate-600">
+                    BSc in Computer Science (EDUVOS). Skills: HTML, CSS,
+                    JavaScript, React, Node.js, PostgreSQL, MongoDB, Git.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 bg-white rounded-lg shadow-sm border">
+              <h3 class="font-semibold">Contact</h3>
+              <p class="mt-3 text-sm">
+                <strong>Email:</strong>
+                <a href="mailto:kyakwima96@gmail.com" class="text-indigo-600"
+                  >kyakwima96@gmail.com</a
+                ><br />
+                <strong>Phone:</strong>
+                <a href="tel:+27721766011" class="text-indigo-600">0721766011</a
+                ><br />
+                <strong>Location:</strong> Johannesburg, South Africa
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="bg-white border-t">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+          <h2 class="text-2xl font-bold">Services</h2>
+          <div class="mt-6 grid sm:grid-cols-3 gap-6">
+            <div class="p-6 border rounded-lg shadow-sm">
+              <h4 class="font-semibold">UI/UX</h4>
+              <p class="mt-2 text-sm text-slate-600">
+                Designing modern interfaces and responsive experiences.
+              </p>
+            </div>
+            <div class="p-6 border rounded-lg shadow-sm">
+              <h4 class="font-semibold">Backend Development</h4>
+              <p class="mt-2 text-sm text-slate-600">
+                Node.js / APIs / Databases & server-side logic.
+              </p>
+            </div>
+            <div class="p-6 border rounded-lg shadow-sm">
+              <h4 class="font-semibold">App Development</h4>
+              <p class="mt-2 text-sm text-slate-600">
+                Building web & cross-platform applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK / PROJECTS -->
+      <section id="work" class="border-t">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+          <div class="flex items-center justify-between">
+            <h2 class="text-2xl font-bold">My Work</h2>
+          </div>
+
+          <p class="mt-3 text-sm text-slate-600">
+            A selection of projects from my portfolio.
+          </p>
+
+          <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- IAMWORX -->
+            <article
+              class="bg-white border rounded-lg shadow-sm p-4 flex flex-col"
+            >
+              <div
+                class="h-40 rounded-md bg-gradient-to-br from-indigo-200 to-indigo-400 flex items-center justify-center text-white font-semibold"
+              >
+                IAMWORX
+              </div>
+              <h3 class="mt-4 font-semibold">IAMWORX</h3>
+              <p class="mt-2 text-sm text-slate-600 flex-1">
+                A Web app that uses cutting-edge algorithms to recommend the
+                perfect Information Access Management system for your
+                organization.
+              </p>
+              <div class="mt-4 flex gap-2">
+                <button
+                  class="open-project px-3 py-1 rounded-md border text-sm"
+                  data-title="IAMWORX"
+                  data-desc="A Web app that uses cutting-edge algorithm, to recommend the perfect Information Access Management system for your organization"
+                >
+                  Details
+                </button>
+              </div>
+            </article>
+
+            <!-- Track it -->
+            <article
+              class="bg-white border rounded-lg shadow-sm p-4 flex flex-col"
+            >
+              <div
+                class="h-40 rounded-md bg-gradient-to-br from-amber-200 to-amber-400 flex items-center justify-center text-white font-semibold"
+              >
+                Track it
+              </div>
+              <h3 class="mt-4 font-semibold">Track it</h3>
+              <p class="mt-2 text-sm text-slate-600 flex-1">
+                A Web app that tracks users' spending to help improve their
+                spending habits.
+              </p>
+              <div class="mt-4 flex gap-2">
+                <button
+                  class="open-project px-3 py-1 rounded-md border text-sm"
+                  data-title="Track it"
+                  data-desc="A Web app that tracks users spending in order to help their spending habits"
+                >
+                  Details
+                </button>
+                <a
+                  href="https://github.com/Aaronkindi/expense-improved"
+                  target="_blank"
+                  class="px-3 py-1 rounded-md border text-sm"
+                  >Code</a
+                >
+              </div>
+            </article>
+
+            <!-- Crypto Tracker -->
+            <article
+              class="bg-white border rounded-lg shadow-sm p-4 flex flex-col"
+            >
+              <div
+                class="h-40 rounded-md bg-gradient-to-br from-emerald-200 to-emerald-400 flex items-center justify-center text-white font-semibold"
+              >
+                Crypto Tracker
+              </div>
+              <h3 class="mt-4 font-semibold">Crypto Tracker</h3>
+              <p class="mt-2 text-sm text-slate-600 flex-1">
+                A Web app that tracks the real-time prices of major crypto
+                indexes.
+              </p>
+              <div class="mt-4 flex gap-2">
+                <button
+                  class="open-project px-3 py-1 rounded-md border text-sm"
+                  data-title="Crypto Tracker"
+                  data-desc="A Web app that tracks the real-time prices of major crypto indexes"
+                >
+                  Details
+                </button>
+                <a
+                  href="https://github.com/Aaronkindi/coinapp"
+                  target="_blank"
+                  class="px-3 py-1 rounded-md border text-sm"
+                  >Code</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="bg-slate-50 border-t">
+        <div class="max-w-4xl mx-auto px-6 py-12">
+          <h2 class="text-2xl font-bold">Contact Me</h2>
+          <p class="mt-2 text-sm text-slate-600">
+            Want to work together? Drop a message.
+          </p>
+
+          <div class="mt-6 grid md:grid-cols-2 gap-6">
+            <form
+              id="contact-form"
+              class="space-y-4 bg-white p-6 rounded-lg shadow-sm border"
+            >
+              <div>
+                <label class="text-sm">Your name</label>
+                <input
+                  required
+                  class="mt-1 block w-full rounded-md border px-3 py-2"
+                  name="name"
+                />
+              </div>
+              <div>
+                <label class="text-sm">Email</label>
+                <input
+                  required
+                  type="email"
+                  class="mt-1 block w-full rounded-md border px-3 py-2"
+                  name="email"
+                />
+              </div>
+              <div>
+                <label class="text-sm">Message</label>
+                <textarea
+                  required
+                  class="mt-1 block w-full rounded-md border px-3 py-2 h-28"
+                  name="message"
+                ></textarea>
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  class="px-4 py-2 rounded-md bg-indigo-600 text-white"
+                >
+                  Send message
+                </button>
+                <span
+                  id="contact-note"
+                  class="ml-3 text-sm text-green-600 hidden"
+                  >Message ready to send (will open mail client).</span
+                >
+              </div>
+            </form>
+
+            <div class="p-6 bg-white rounded-lg shadow-sm border">
+              <h4 class="font-semibold">Get in touch</h4>
+              <p class="mt-2 text-sm text-slate-600">
+                Email:
+                <a href="mailto:kyakwima96@gmail.com" class="text-indigo-600"
+                  >kyakwima96@gmail.com</a
+                ><br />
+                Phone:
+                <a href="tel:+27721766011" class="text-indigo-600">0721766011</a
+                ><br />
+                Location: Johannesburg, South Africa
+              </p>
+              <div class="mt-6">
+                <a
+                  href="https://github.com/Aaronkindi"
+                  target="_blank"
+                  class="inline-block px-3 py-2 rounded-md border"
+                  >GitHub</a
+                >
+                <a
+                  href="https://portfolio-rho-lac-25.vercel.app/"
+                  target="_blank"
+                  class="inline-block ml-2 px-3 py-2 rounded-md border"
+                  >Live portfolio</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="border-t">
+        <div class="max-w-6xl mx-auto px-6 py-6 text-sm text-slate-600">
+          Built by Aaron — © <span id="year"></span>. Design inspired by
+          devonstank.com
+        </div>
+      </footer>
+    </main>
+
+    <!-- Project Modal (simple) -->
+    <div
+      id="project-modal"
+      class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-lg max-w-2xl w-full p-6">
+        <button id="modal-close" class="float-right text-slate-500">
+          Close
+        </button>
+        <h3 id="modal-title" class="text-xl font-bold mt-2"></h3>
+        <p id="modal-desc" class="mt-3 text-slate-700"></p>
+        <div class="mt-4 text-right">
+          <a
+            id="modal-github"
+            href="#"
+            target="_blank"
+            class="px-3 py-1 rounded-md border text-sm hidden"
+            >View code</a
+          >
+        </div>
+      </div>
     </div>
-</div>
 
     <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab")
+      // small UI scripts
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-        }
+      // mobile toggle
+      const navToggle = document.getElementById("nav-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      navToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
 
+      // contact form: open mailto
+      const form = document.getElementById("contact-form");
+      const note = document.getElementById("contact-note");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const f = new FormData(form);
+        const name = encodeURIComponent(f.get("name"));
+        const email = encodeURIComponent(f.get("email"));
+        const message = encodeURIComponent(f.get("message"));
+        const subject = encodeURIComponent("Portfolio contact from " + name);
+        const body = encodeURIComponent(
+          "Name: " + name + "\\nEmail: " + email + "\\n\\n" + message
+        );
+        // open default mail client
+        window.location.href = `mailto:kyakwima96@gmail.com?subject=${subject}&body=${body}`;
+        note.classList.remove("hidden");
+      });
+
+      // project modal
+      document.querySelectorAll(".open-project").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const title = btn.dataset.title;
+          const desc = btn.dataset.desc;
+          document.getElementById("modal-title").textContent = title;
+          document.getElementById("modal-desc").textContent = desc;
+          // show/hide code link if we have one
+          const gitLink =
+            title === "Track it"
+              ? "https://github.com/Aaronkindi/expense-improved"
+              : "";
+          const mg = document.getElementById("modal-github");
+          if (gitLink) {
+            mg.href = gitLink;
+            mg.classList.remove("hidden");
+          } else {
+            mg.classList.add("hidden");
+          }
+          document.getElementById("project-modal").classList.remove("hidden");
+          document.getElementById("project-modal").classList.add("flex");
+        });
+      });
+      document.getElementById("modal-close").addEventListener("click", () => {
+        document.getElementById("project-modal").classList.add("hidden");
+        document.getElementById("project-modal").classList.remove("flex");
+      });
+      // close modal clicking overlay
+      document
+        .getElementById("project-modal")
+        .addEventListener("click", (e) => {
+          if (e.target === document.getElementById("project-modal")) {
+            document.getElementById("modal-close").click();
+          }
+        });
     </script>
-    <script>
-        var sidemenu = document.getElementById("sidemenu");
-
-        function openmenu(){
-            sidemenu.style.right="0";
-        }
-        function closemenu(){
-            sidemenu.style.right="-200px";
-        }
-    </script>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycby7Lw1T_kJ3EiSoRCSnalCfM1P4LciUMm59wh4bIa3NQlKbwE2AAqQT3HUKZlZrjt4/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {msg.innerHTML="Message sent successfully"
-        setTimeout(function(){
-            msg.innerHTML=""
-        }, 5000)
-        form.reset()
-    
-    })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
-</body>
+  </body>
 </html>
